@@ -195,3 +195,7 @@ footer {
     margin-bottom: 0;
   }
 }
+nav ul li a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
