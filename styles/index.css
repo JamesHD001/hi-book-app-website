@@ -132,8 +132,6 @@ footer {
   }
 }
 
-/* ... keep all your previous CSS ... */
-
 /* Hamburger Icon */
 .menu-toggle {
   display: none;
@@ -195,10 +193,14 @@ footer {
     margin-bottom: 0;
   }
 }
+/* Active Nav Link */
 nav ul li a.active {
   font-weight: bold;
-  text-decoration: underline;
+  color: #F60C08; /* secondary brand color for highlight */
+  border-bottom: 2px solid #F60C08;
+  padding-bottom: 2px;
 }
+
 
 /* Form Section */
 .form-section {
@@ -270,4 +272,11 @@ form button:hover {
 
 .redirect a:hover {
   text-decoration: underline;
+}
+
+/* Hover Effect */
+nav ul li a:hover {
+  color: #F60C08; /* same as active */
+  border-bottom: 2px solid #F60C08;
+  padding-bottom: 2px;
 }
