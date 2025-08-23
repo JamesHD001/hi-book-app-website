@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
+  <!-- Navbar -->
   <header class="navbar">
     <div class="logo">Hi!Book</div>
     <div class="menu-toggle" id="menu-toggle">
@@ -24,9 +25,21 @@
     </nav>
   </header>
 
-  <section class="content">
-    <h1>Login to Hi!Book</h1>
-    <p>Login form coming soon...</p>
+  <!-- Login Form -->
+  <section class="form-section">
+    <div class="form-container">
+      <h1>Login</h1>
+      <form>
+        <label>Email</label>
+        <input type="email" placeholder="Enter your email" required>
+        
+        <label>Password</label>
+        <input type="password" placeholder="Enter your password" required>
+
+        <button type="submit">Login</button>
+        <p class="redirect">Don't have an account? <a href="signup.html">Signup</a></p>
+      </form>
+    </div>
   </section>
 
   <footer>

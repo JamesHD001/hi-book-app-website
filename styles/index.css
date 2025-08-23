@@ -166,10 +166,10 @@ footer {
   transform: rotate(-45deg) translateY(-9px);
 }
 
-/* Mobile Navbar */
+/* Responsive Navbar */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: flex; /* Show hamburger */
+    display: flex;
   }
 
   nav ul {
@@ -178,13 +178,13 @@ footer {
     flex-direction: column;
     background: #1675F1;
     width: 100%;
-    padding: 0 1rem; /* remove padding initially */
+    padding: 0 1rem;
     transition: max-height 0.4s ease, padding 0.3s ease;
   }
 
   nav ul.show {
-    max-height: 300px; /* enough height for links */
-    padding: 1rem;     /* add padding when opened */
+    max-height: 300px;
+    padding: 1rem;
   }
 
   nav ul li {
@@ -197,5 +197,77 @@ footer {
 }
 nav ul li a.active {
   font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Form Section */
+.form-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background: #f9f9f9;
+  padding: 2rem;
+}
+
+.form-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+.form-container h1 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #1675F1;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+form input {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  width: 100%;
+  padding: 0.8rem;
+  background: #1675F1;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background: #125ec4;
+}
+
+.redirect {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.redirect a {
+  color: #F60C08;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.redirect a:hover {
   text-decoration: underline;
 }
