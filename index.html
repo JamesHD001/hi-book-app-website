@@ -1,43 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en US">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Connect with friends and family using Hi!Book. Share moments, chat, and stay updated with your loved ones.">
+  <meta name="keywords" content="Hi!Book, social media, connect, friends, family, chat, share">
+  <meta name="author" content="Hi!Book Team">
   <title>Hi!Book - Connect with Friends</title>
   <link rel="stylesheet" href="./styles/index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" rel="preconnect">
+  <link rel="preconnect" href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Winky Rough:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <header class="navbar">
-        <div class="logo">Hi!Book</div>
-        
-        <div class="menu-toggle" id="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-        </div>
+  <header>
+    <div class="hero">
+      <h1>Welcome to Hi!Book</h1>
+      <p>Your social media platform to connect with friends and family.</p>
+      <a href="signup.html" class="welcome-btn">Get Started</a>
+      <a href="login.html" class="welcome-btn">Login</a>
+    </div>
 
-        <nav>
-            <ul id="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="signup.html">Signup</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="navbar">
+      <div class="logo-text">Hi!Book</div>
+      <img src="./images/hibook-logo.png" alt="Hi!Book Logo" class="logo">
+      <ul id="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+      </ul>
+      <div id="menu-toggle" class="menu-toggle">&#9776;</div>
+    </nav>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Welcome to Hi!Book</h1>
-            <p>Connect, share, and enjoy moments with friends and family around the world.</p>
-            <a href="#" class="btn">Get Started</a>
-        </div>
+  </header>
+
+  <main>
+    <section class="features">
+      <h2>Features</h2>
+
+      <div class="feature-item">
+        <img src="./images/connect.png" alt="Connect with Friends">
+        <figcaption>Connect with Friends</figcaption>
+        <p>Find, meet and connect with friends and family from around the world.</p>
+      </div>
+
+      <div class="feature-item">
+        <img src="./images/share.png" alt="Share Moments">
+        <figcaption>Share Moments</figcaption>
+        <p>Post updates, photos, and videos to share your life moments.</p>
+      </div>
+
+      <div class="feature-item">
+        <img src="./images/chat.png" alt="Chat Instantly">
+        <figcaption>Chat Instantly</figcaption>
+        <p>Use our instant messaging feature to stay in touch.</p>
+      </div>
+
+      <div class="feature-item">
+        <img src="./images/gift.png" alt="Send Gifts">
+        <figcaption>Send Gifts</figcaption>
+        <p>Send virtual gifts to your friends and loved ones.</p>
+      </div>
+
+      <div class="feature-item">
+        <img src="./images/video-call.png" alt="Video Calls">
+        <figcaption>Video Calls</figcaption>
+        <p>Make high-quality video calls to connect face-to-face.</p>
+      </div>
+
+      <div class="feature-item">
+        <img src="./images/live-stream.png" alt="Live Streaming">
+        <figcaption>Live Streaming</figcaption>
+        <p>Broadcast live videos to your followers and interact in real-time.</p>
+      </div>
+
+      <div class="feature-item">
+        <img src="./images/content.png" alt="Content Sharing">
+        <figcaption>Content Sharing</figcaption>
+        <p>Share articles, music, and videos with your network.</p>
+      </div>
+
+      <div class="feature-item">
+        <img src="./images/security.png" alt="Secure Platform">
+        <figcaption>Secure Platform</figcaption>
+        <p>Your privacy and security are our top priorities.</p>
+      </div>
+
+      <div class="feature-item">
+        <img src="./images/easy-to-use.png" alt="Easy to Use">
+        <figcaption>Easy to Use</figcaption>
+        <p>User-friendly interface designed for everyone.</p>
+      </div>
+
+      <div class="feature-item">
+        <img src="./images/engaging.png" alt="Engaging Experience">
+        <figcaption>Engaging Experience</figcaption>
+        <p>Interactive features to keep you engaged and entertained.</p>
+      </div>
+
     </section>
 
+    <section class="about-section">
+      <h1>About Hi!Book</h1>
+      <p>
+        Hi!Book is a modern social platform built to connect people, 
+        share experiences, and create meaningful interactions.
+        With features like gifting, video calls, live streaming, 
+        and content sharing, Hi!Book is designed to be secure, fun, easy to use, 
+        and engaging for everyone.
+      </p>
+      
+      <p>
+        Our goal is to create a safe and vibrant space where users 
+        can express themselves freely, connect with friends, 
+        meet and discover new friends and communities.
+      </p>
+    </section>
+
+  </main>
   <footer>
     <p>&copy; 2025 Hi!Book. All rights reserved.</p>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>
