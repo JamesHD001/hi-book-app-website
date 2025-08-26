@@ -16,102 +16,116 @@
 <body>
   <header>
     <nav class="navbar">
-      <div class="logo-text">Hi!Book</div>
-      <img src="./images/hibook-logo.png" alt="Hi!Book Logo" class="logo">
-      <ul id="nav-links">
-        <li><a href="about.html">About</a></li>
+      <div class="brand">
+        <img src="images/hibook-logo.png" alt="Hi!Book Logo" class="image-logo">
+        <span class="text-logo">Hi!Book</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="login.html">Login</a></li>
         <li><a href="signup.html">Sign Up</a></li>
+        <li><a href="about.html">About Us</a></li>
       </ul>
-      <div id="menu-toggle" class="menu-toggle">&#9776;</div>
     </nav>
 
-
-    <div class="hero">
-      <h1>Welcome to Hi!Book</h1>
-      <p>Your social media platform to connect with friends and family.</p>
-      <a href="signup.html" class="welcome-btn">Get Started</a>
-      <a href="login.html" class="welcome-btn">Login</a>
-    </div>
   </header>
-
   <main>
+    <div class="hero">
+      <h1 class="gradient-text">Welcome to Hi!Book</h1>
+      <p class="gradient-subtitle">Your social media platform to connect with friends and family...</p>
+      <div class="btn-group">
+        <a href="signup.html" class="welcome-btn">Get Started</a>
+        <a href="login.html" class="welcome-btn">Login to Hi!Book</a>
+      </div>
+    </div>
+
     <section class="features">
       <h2>Features</h2>
-
+      <p> Why should you use Hi!Book?</p>
       <div class="feature-item">
-        <img src="./images/connect.jpeg" alt="Connect with Friends">
-        <img src="./images/connect1.jpeg" alt="Connect with Friends">
+        <div class="feature-item-images">
+          <img src="./images/connect.jpeg" alt="Connect with Friends">
+          <img src="./images/connect1.jpeg" alt="Connect with Friends">
+        </div>
         <figcaption>Connect with Friends</figcaption>
         <p>Find, meet and connect with friends and family from around the world.</p>
       </div>
 
       <div class="feature-item">
-        <img src="./images/share.jpg" alt="Share Moments">
-        <img src="./images/share1.jpeg" alt="Share Moments">
+        <div class="feature-item-images">
+          <img src="./images/share.jpg" alt="Share Moments">
+          <img src="./images/share1.jpeg" alt="Share Moments">
+        </div>
         <figcaption>Share Moments</figcaption>
         <p>Post updates, photos, and videos to share your life moments.</p>
       </div>
 
       <div class="feature-item">
-        <img src="./images/chat.jpeg" alt="Chat Instantly">
-        <img src="./images/chat1.jpeg" alt="Chat Instantly">
+        <div class="feature-item-images">
+          <img src="./images/chat.jpeg" alt="Chat Instantly">
+          <img src="./images/chat1.jpeg" alt="Chat Instantly">
+        </div>
         <figcaption>Chat Instantly</figcaption>
         <p>Use our instant messaging feature to stay in touch.</p>
       </div>
 
       <div class="feature-item">
-        <img src="./images/gift.jpeg" alt="Send Gifts">
-        <img src="./images/gift1.jpg" alt="Send Gifts">
+        <div class="feature-item-images">
+          <img src="./images/gift.jpeg" alt="Send Gifts">
+          <img src="./images/gift1.jpg" alt="Send Gifts">
+        </div>
         <figcaption>Send Gifts</figcaption>
         <p>Send virtual gifts to your friends and loved ones.</p>
       </div>
 
       <div class="feature-item">
-        <img src="./images/video-call.jpeg" alt="Video Calls">
-        <img src="./images/video-call1.jpeg" alt="Video Calls">
+        <div class="feature-item-images">
+          <img src="./images/video-call.jpeg" alt="Video Calls">
+          <img src="./images/video-call1.jpeg" alt="Video Calls">
+        </div>
         <figcaption>Video Calls</figcaption>
         <p>Make high-quality video calls to connect face-to-face.</p>
       </div>
 
       <div class="feature-item">
-        <img src="./images/live-stream.jpeg" alt="Live Streaming">
         <figcaption>Live Streaming</figcaption>
+        <img src="./images/live-stream.jpeg" alt="Live Streaming">
         <p>Broadcast live videos to your followers and interact in real-time.</p>
       </div>
 
       <div class="feature-item">
-        <img src="./images/content.jpg" alt="Content Sharing">
         <figcaption>Content Sharing</figcaption>
+        <img src="./images/content.jpg" alt="Content Sharing">
         <p>Share articles, music, and videos with your network.</p>
       </div>
 
       <div class="feature-item">
-        <img src="./images/security.jpeg" alt="Secure Platform">
         <figcaption>Secure Platform</figcaption>
+        <img src="./images/security.jpeg" alt="Secure Platform">
         <p>Your privacy and security are our top priorities.</p>
       </div>
 
       <div class="feature-item">
-        <img src="./images/easy-to-use.jpeg" alt="Easy to Use">
         <figcaption>Easy to Use</figcaption>
+        <img src="./images/easy-to-use.jpeg" alt="Easy to Use">
         <p>User-friendly interface designed for everyone.</p>
       </div>
 
       <div class="feature-item">
-        <img src="./images/engaging.jpeg" alt="Engaging Experience">
         <figcaption>Engaging Experience</figcaption>
+        <img src="./images/engaging.jpg" alt="Engaging Experience">
         <p>Interactive features to keep you engaged and entertained.</p>
       </div>
 
     </section>
 
-    <section class="about-section">
+    <section class="homme-about-section">
       <h1>About Hi!Book</h1>
       <p>
-        Hi!Book is a modern social platform built to connect people, 
+          Hi!Book is a modern social platform built to connect people, 
         share experiences, and create meaningful interactions.
-        With features like gifting, video calls, live streaming, 
+          With features like gifting, video calls, live streaming, 
         and content sharing, Hi!Book is designed to be secure, fun, easy to use, 
         and engaging for everyone.
       </p>
@@ -124,7 +138,8 @@
     </section>
 
   </main>
-  <footer>
+  <footer class="footer-content">
+    <a href="#top" class="back-to-top">^Back to top</a>
     <p>&copy; 2025 Hi!Book. All rights reserved.</p>
   </footer>
   <script src="script.js"></script>
