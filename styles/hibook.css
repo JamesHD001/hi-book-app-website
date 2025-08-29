@@ -1,0 +1,226 @@
+:root {
+    --primary-color: #6C63FF;
+    --secondary-color: #ffffff;
+    --accent1-color: #FFB800;
+    --accent2-color: #FF4B5C;
+    --font-main: 'Nunito Sans', sans-serif;
+    --font-logo: 'Winky Rough', cursive;
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--secondary-color);
+    color: #333;
+    margin: auto;
+    padding: auto;
+    line-height: 1.6;
+}
+
+.navbar {
+    background: var(--primary-color);
+    padding: 8px 20px;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.navbar a {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.nav-links a:hover {
+    background: #00d9ff;
+    color: #000;
+    transform: scale(5.08);
+    color: var(--accent2-color);
+}
+
+.gradient-logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #1675F1, #F60C08, #FFE066, #FD11D6);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;  
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    animation: gradientShift 20s ease infinite;
+}
+
+/* Hero Section */
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("../images/hero-image.jpg") no-repeat center center/cover,
+    url("https://source.unsplash.com/1600x900/?friends,chat") no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-family: var(--font-logo);
+    color: var(--accent1-color);
+    text-align: center;
+}
+
+.gradient-text {
+    font-size: 60px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #1675F1, #F60C08, #FFE066, #FD11D6);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;  
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hero p {
+    font-size: 1rem;
+    max-width: 600px;
+}
+
+.gradient-cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    color: white;
+    background: linear-gradient(90deg, #1675F1, #FFE066, #FD11D6);
+    background-size: 300% 300%;
+    transition: background-position 0.5s, transform 0.3s;
+    animation: gradientShift 15s ease infinite;
+}
+
+.gradient-cta-button:hover {
+    background-position: 100% 50%;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+footer {
+    background: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}  
+
+.footer a:hover {
+    color: var(--accent1-color);
+}
+
+.footer p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+} 
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .cta-button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+/* about section */
+.about-section {
+    padding: 2rem;
+    background: #fff;
+    text-align: left;
+    font-family: var(--font-main);
+    color: var(--secondary-color);
+    background: url("../images/about-bg.jpeg") no-repeat center center/cover;
+    line-height: 1.8;
+}
+
+.about-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-main);
+    color: var(--primary-color);
+    text-align: left;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 0 auto;
+    line-height: 2.2;
+    text-align: left;
+}
+
+.gradient-about-cta-button {
+    display: flex;
+    padding: 12px 24px;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    color: white;
+    background: linear-gradient(90deg, #1675F1, #FFE066, #FD11D6);
+    background-size: 300% 300%;
+    transition: background-position 0.5s, transform 0.3s;
+    animation: gradientShift 15s ease infinite;
+}
