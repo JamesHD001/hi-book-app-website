@@ -261,9 +261,59 @@ footer {
 }
 
 /* Features Section */
+.features-hero{
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("../images/features-hero.jpg") no-repeat center center/cover,
+    url("https://source.unsplash.com/1600x900/?friends,chat") no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.features-gradient-text {
+    font-size: 50px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #1675F1, #F60C08, #FFE066, #FD11D6);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;  
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    animation: gradientShift 15s ease infinite;
+}
+
+.feautures-hero-content{
+    margin-top: 100px;
+    text-align: center;
+    color: #fff;
+}
+
+.features-gradient-text {
+    font-size: 50px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #1675F1, #F60C08, #FFE066, #FD11D6);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;  
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 .features-section {
     padding: 2rem;
     background: #f9f9f9;
+    display: block;
     text-align: center;
     font-family: var(--font-main);
     color: var(--secondary-color);
