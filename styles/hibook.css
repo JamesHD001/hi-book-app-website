@@ -30,7 +30,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
 
 .navbar ul {
@@ -56,11 +58,36 @@ body {
     border-radius: 10px;
 }
 
+.nav-links a {
+    display: inline-block;
+    transform-origin: center;
+    transition: background 0.3s, color 0.3s, transform 0.25s, box-shadow 0.25s;
+    will-change: transform;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    transform: scale(1.08);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    outline: none;
+}
+
+.nav-links a:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.nav-links a {
+    transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
 .nav-links a:hover {
     background: #00d9ff;
-    color: #000;
-    transform: scale(5.08);
-    color: var(--accent2-color);
+    color: var(--secondary-color);
+    transform: scale(1.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .gradient-logo {
@@ -192,6 +219,8 @@ footer {
     color: var(--secondary-color);
     background: url("../images/about-bg.jpeg") no-repeat center center/cover;
     line-height: 1.8;
+    border: border-box;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .about-section h1 {
@@ -204,14 +233,14 @@ footer {
 
 .about-section p {
     font-size: 1.1rem;
-    color: #666;
+    color: #ffffff;
     margin: 0 auto;
     line-height: 2.2;
     text-align: left;
 }
 
 .gradient-about-cta-button {
-    display: flex;
+    display: inline-block;
     padding: 12px 24px;
     margin: 10px;
     font-size: 16px;
@@ -223,4 +252,10 @@ footer {
     background-size: 300% 300%;
     transition: background-position 0.5s, transform 0.3s;
     animation: gradientShift 15s ease infinite;
+}
+
+.gradient-about-cta-button:hover {
+    background-position: 100% 50%;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
