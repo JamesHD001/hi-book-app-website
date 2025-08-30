@@ -322,6 +322,17 @@ footer {
     line-height: 1.6;
 }
 
+.feature-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+}
+
+.feature-card img :hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+}
+
 /* Responsive Design for Features Section */
 @media (max-width: 768px) {
     .features-section h1 {
