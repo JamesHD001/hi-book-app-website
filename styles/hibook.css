@@ -261,7 +261,7 @@ footer {
 }
 
 /* Features Section */
-.features-hero{
+.features-hero {
     height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
     url("../images/features-hero.jpg") no-repeat center center/cover,
@@ -286,22 +286,10 @@ footer {
     animation: gradientShift 15s ease infinite;
 }
 
-.feautures-hero-content{
+.feautures-hero-content {
     margin-top: 100px;
     text-align: center;
     color: #fff;
-}
-
-.features-gradient-text {
-    font-size: 50px;
-    font-weight: bold;
-    background: linear-gradient(90deg, #1675F1, #F60C08, #FFE066, #FD11D6);
-    background-size: 300% 300%;
-    -webkit-background-clip: text;  
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-    animation: gradientShift 15s ease infinite;
 }
 
 @keyframes gradientShift {
@@ -341,16 +329,18 @@ footer {
 .feature-cards {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     gap: 20px;
-    justify-content: center;
+    align-items: center;
+    margin: 5px 20px;
 }
 
 .feature-card {
     background: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 250px;
+    width: 40%;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
 }   
@@ -373,18 +363,22 @@ footer {
 }
 
 .feature-card img {
-    width: 80px;
-    height: 80px;
+    width: 180px;
+    height: 180px;
     margin-bottom: 1rem;
 }
 
-.feature-card img :hover {
-    transform: scale(1.1);
-    transition: transform 0.3s;
-}
-
-/* Responsive Design for Features Section */
+/* Responsive Design for smaller screens */
 @media (max-width: 768px) {
+    .feature-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-card {
+        width: 55%; 
+    }
+
     .features-section h1 {
         font-size: 2.5rem;
     }
@@ -393,14 +387,4 @@ footer {
         font-size: 1rem;
         padding: 0 1rem;
     }
-
-    .feature-cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .feature-card {
-        width: 80%;
-    }
 }
-
