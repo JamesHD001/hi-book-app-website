@@ -229,6 +229,7 @@ footer {
     font-family: var(--font-main);
     color: var(--primary-color);
     text-align: left;
+    margin-top: 2rem;
 }
 
 .about-section p {
