@@ -1,11 +1,10 @@
-// Toggle mobile menu
-const menuToggle = document.getElementById("menu-toggle");
-const navLinks = document.getElementById("nav-links");
+// Hamburger menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobilenavLinks = document.getElementById('navLinks');
 
-menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
-  menuToggle.classList.toggle("active");
-});
+    hamburger.addEventListener('click', () => {
+      mobilenavLinks.classList.toggle('show');
+    });
 
 // Highlight the active link based on current page
 document.addEventListener("DOMContentLoaded", function () {
