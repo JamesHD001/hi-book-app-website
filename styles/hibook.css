@@ -171,14 +171,14 @@ body {
 
 /* Footer */
 .footer-content {
-    background:#1675F1;
+    background:#444444;
     color: var(--secondary-color);
     text-align: center;
     padding: 1rem 0;
     position: relative;
-    bottom: 0;
     width: 100%;
     margin: 0;
+    max-height: 75px;
 }
 
 .footer-content a {
