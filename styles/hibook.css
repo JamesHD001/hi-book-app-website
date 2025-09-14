@@ -234,6 +234,7 @@ body {
     background: linear-gradient(90deg, #3afafa, #F60C08, #FD11D6, #1675F1);
     background-size: 300% 300%;
     -webkit-background-clip: text;  
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: background-position 0.5s, transform 0.3s;
     animation: gradientShift 15s ease infinite;
