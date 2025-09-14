@@ -135,12 +135,11 @@ body {
     animation: gradientShift 15s ease infinite;
 }
 
-.button-section {
-    /* margin-top: 30px; */
+/* .button-section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
+} */
 
 .signup-gradient-text-button {
     padding: 10px 20px;
@@ -171,7 +170,7 @@ body {
 
 /* Footer */
 .footer-content {
-    background:#444444;
+    background:#0a1f2e;
     color: var(--secondary-color);
     text-align: center;
     padding: 1rem 0;
@@ -192,6 +191,60 @@ body {
     text-decoration: underline;
     transform: scale(1.1);
 }
+
+/* about section */
+.about-section {
+    padding: 2rem;
+    background: var(--accent1-color);
+    text-align: left;
+    font-family: var(--font-main);
+    color: var(--secondary-color);
+    background: url("../images/about-bg.jpeg") no-repeat center center/cover;
+    line-height: 1.8;
+    border: border-box;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.about-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-main);
+    color: var(--primary-color);
+    text-align: left;
+    margin-top: 2rem;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    color: #484848;
+    margin: 0 auto;
+    line-height: 2.2;
+    text-align: left;
+}
+
+.gradient-about-cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    color: white;
+    background: linear-gradient(90deg, #3afafa, #F60C08, #FD11D6, #1675F1);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;  
+    -webkit-text-fill-color: transparent;
+    transition: background-position 0.5s, transform 0.3s;
+    animation: gradientShift 15s ease infinite;
+}
+
+.gradient-about-cta-button:hover {
+    background-position: 100% 50%;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
 /* Mobile Menu (Hidden by default) */
 @media (max-width: 768px) {
     .nav-links {
