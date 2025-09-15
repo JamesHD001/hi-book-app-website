@@ -145,13 +145,13 @@ body {
 
 .signup-gradient-text-button {
     display: inline-block;
-    margin: 0;
-    padding: 0;
-    border-radius: 30px;
+    margin: 5 auto;
+    padding: 0 auto;
+    border-radius: 8px;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    border: none;
+    border: double;
     transition: all 0.3s ease;
     background: linear-gradient(90deg, #3afafa, #F60C08, #FD11D6, #1675F1);
     background-size: 300% 300%;
@@ -248,6 +248,136 @@ body {
     background-position: 100% 50%;
     transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Features Section */
+.features-hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("../images/features-hero.jpg") no-repeat center center/cover,
+    url("https://source.unsplash.com/1600x900/?friends,chat") no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.features-gradient-text {
+    font-size: 50px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #1675F1, #F60C08, #FFE066, #FD11D6);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;  
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    animation: gradientShift 15s ease infinite;
+}
+
+.feautures-hero-content {
+    margin-top: 100px;
+    text-align: center;
+    color: #fff;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.features-section {
+    padding: 2rem;
+    background: #f9f9f9;
+    display: block;
+    text-align: center;
+    font-family: var(--font-main);
+    color: var(--secondary-color);
+    border: border-box;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.features-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-main);
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.features-section p {
+    font-size: 1.1rem;
+    color: #333;
+    margin: 0 auto 2rem auto;
+    line-height: 1.8;
+    max-width: 800px;
+    text-align: center;
+}
+
+.feature-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    margin: 5px 20px;
+}
+
+.feature-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 120%;
+    height: 120%;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}   
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.feature-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.feature-card img {
+    width: 500px;
+    height: 500px;
+    margin-bottom: 1rem;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .feature-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-card {
+        width: 55%; 
+    }
+
+    .features-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .features-section p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
 }
 
 /* Mobile Menu (Hidden by default) */
