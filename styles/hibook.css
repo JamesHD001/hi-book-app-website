@@ -135,32 +135,31 @@ body {
     animation: gradientShift 15s ease infinite;
 }
 
-/* .button-section {
+.button-section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-} */
+    align-items: center;
+    gap: .5rem;
+}
 
 .signup-gradient-text-button {
-    padding: 10px 20px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
     border-radius: 25px;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
     border: none;
     transition: all 0.3s ease;
-}
-
-.signup-gradient-text-button {
     background: linear-gradient(90deg, #3afafa, #F60C08, #FD11D6, #1675F1);
-    color: white;
     background-size: 300% 300%;
     animation: gradientShift 15s ease infinite;
     -webkit-background-clip: text;  
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
-    animation: gradientShift 15s ease infinite;
 }
 
 .signup-gradient-text-button:hover {
@@ -168,6 +167,11 @@ body {
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
+.or-text {
+    margin: 0 10px;
+    color: darkgray;
+    font-weight: lighter;
+}
 /* Footer */
 .footer-content {
     background:#0a1f2e;
