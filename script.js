@@ -159,3 +159,11 @@ document.querySelector('.contact-form-card form').addEventListener('submit', fun
     card.classList.add('shake');
   }
 });
+
+document.querySelector("form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  // Normally you would check credentials here...
+  // If successful:
+  window.location.href = "home.html";
+});
