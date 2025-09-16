@@ -145,3 +145,17 @@ togglePassword.addEventListener('click', () => {
   // Change icon (👁 to 👁‍🗨 or vice versa)
   togglePassword.textContent = type === 'password' ? '👁' : '🙈';
 });
+
+document.querySelector('.contact-form-card form').addEventListener('submit', function (e) {
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const message = document.getElementById('message').value.trim();
+  
+  if (!name || !email || !message) {
+    e.preventDefault(); // Stop form submission
+    const card = document.querySelector('.contact-form-card');
+    card.classList.remove('shake'); // Reset animation if already played
+    void card.offsetWidth; // Trick to restart animation
+    card.classList.add('shake');
+  }
+});

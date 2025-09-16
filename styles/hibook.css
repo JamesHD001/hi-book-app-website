@@ -713,6 +713,231 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* ===== Contact Page Styles ===== */
+.contact-hero {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.contact-hero h1 {
+  font-family: var(--font-main);
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.contact-subtext {
+  font-size: 1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===== Contact Section Layout ===== */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 1rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.contact-form-card {
+  flex: 1 1 400px;
+  background: var(--secondary-color);
+  padding: 2rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.contact-info {
+  flex: 1 1 300px;
+  background: #f8f9fc;
+  padding: 2rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.contact-info h2 {
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+/* ===== Form Styles ===== */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.input-group input,
+.input-group textarea {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  font-family: var(--font-main);
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(62, 226, 255, 0.2);
+}
+
+/* ===== Button ===== */
+.contact-btn {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  padding: 0.9rem;
+  font-size: 1rem;
+  font-weight: 700;
+  width: 100%;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: var(--accent2-color);
+}
+
+/* ===== Feedback Message ===== */
+.form-feedback {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: green;
+  font-weight: 600;
+}
+
+/* ===== Social Links ===== */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-links img {
+  width: 28px;
+  height: 28px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.social-links img:hover {
+  filter: grayscale(0%) drop-shadow(0 0 3px var(--primary-color));
+}
+
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Apply animations */
+.contact-hero h1,
+.contact-subtext {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.contact-form-card {
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.contact-info {
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+/* ===== Interactive Form Effects ===== */
+
+/* Form fields focus/hover effect */
+.contact-form-card input:hover,
+.contact-form-card textarea:hover,
+.contact-form-card input:focus,
+.contact-form-card textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px rgba(62, 226, 255, 0.4);
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+/* Smooth transition for input fields */
+.contact-form-card input,
+.contact-form-card textarea {
+  transition: all 0.3s ease;
+}
+
+/* Button hover animation */
+.contact-form-card button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(62, 226, 255, 0.4);
+}
+
+/* Button click (press-in) animation */
+.contact-form-card button:active {
+  transform: scale(0.97);
+  box-shadow: 0 3px 8px rgba(62, 226, 255, 0.3);
+  transition: transform 0.1s ease;
+}
+
+/* Shake animation for error feedback */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+
+.contact-form-card.shake {
+  animation: shake 0.4s ease;
+}
+
+
+/* ===== Responsive Layout ===== */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .contact-info {
+    order: -1;
+  }
+}
+
 /* ===== Mobile Optimization ===== */
 @media (max-width: 480px) {
   .signup-card {
