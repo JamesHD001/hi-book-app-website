@@ -6,67 +6,67 @@
     <meta name="description" content="Connect with friends and family using Hi!Book. Share moments, chat, and stay updated with your loved ones.">
     <meta name="keywords" content="Hi!Book, social media, connect, friends, family, chat, share">
     <meta name="author" content="Hi!Book Team">
-    <title>Hi!Book - Connect with Friends</title>
-    <link rel="stylesheet" href="./styles/hibook.css">
+    <title>Hi!Book - Login</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" rel="preconnect">
-    <link rel="preconnect" href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Winky Rough:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Rough&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/hibook.css">
   </head>
 
   <body>
     <header>
       <nav>
         <div class="navbar">
-        <div class="gradient-logo" id="gradient-logo">Hi!Book</div>
-        
-        <ul class="nav-links" id="navLinks">
-          <li><a href="Features.html">Features</a></li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="signup.html">Sign Up</a></li>
-          <li><a href="about.html">About Us</a></li>
-        </ul>
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
+          <div class="gradient-logo" id="gradient-logo">Hi!Book</div>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="Features.html">Features</a></li>
+            <li><a href="login.html" class="active">Login</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </nav>
-
     </header>
-  <body>
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="logo-text">Hi!Book</div>
-    <ul id="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="features.html">Features</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div id="menu-toggle" class="menu-toggle">&#9776;</div>
-  </nav>
 
-  <!-- Login Form -->
-  <section class="form-section">
-    <div class="form-container">
-      <h1>Login</h1>
-      <form>
-        <label>Email</label>
-        <input type="email" placeholder="Enter your email" required>
-        
-        <label>Password</label>
-        <input type="password" placeholder="Enter your password" required>
+    <main class="form-section">
+      <div class="form-container">
+        <h1 class="form-title">Welcome Back</h1>
+        <p class="form-subtext">Log in to continue connecting with friends.</p>
 
-        <button type="submit">Login</button>
-        <p class="redirect">Don't have an account? <a href="signup.html">Signup</a></p>
-      </form>
-    </div>
-  </section>
+        <form id="loginForm">
+          <div class="input-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="Enter your email" required>
+          </div>
 
-  <footer>
-    <p>&copy; 2025 Hi!Book. All rights reserved.</p>
-  </footer>
-  
-  <script src="script.js"></script>
-</body>
+          <div class="input-group password-group">
+            <label for="password">Password</label>
+            <div class="password-wrapper">
+              <input id="password" type="password" placeholder="Enter your password" required>
+              <span class="toggle-password" id="togglePassword">&#128065;</span>
+            </div>
+          </div>
+
+          <button type="submit" class="login-btn">Login</button>
+
+          <p class="redirect">Don't have an account? 
+            <a href="signup.html">Sign Up</a>
+          </p>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Hi!Book. All rights reserved.</p>
+    </footer>
+
+    <script src="./scripts/login.js"></script>
+  </body>
 </html>

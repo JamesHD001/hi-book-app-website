@@ -134,3 +134,14 @@ document.addEventListener("DOMContentLoaded", () => {
     lucide.createIcons(); // Reset icons after reset
   });
 });
+
+const passwordField = document.getElementById('password');
+const togglePassword = document.getElementById('togglePassword');
+
+togglePassword.addEventListener('click', () => {
+  const type = passwordField.type === 'password' ? 'text' : 'password';
+  passwordField.type = type;
+
+  // Change icon (👁 to 👁‍🗨 or vice versa)
+  togglePassword.textContent = type === 'password' ? '👁' : '🙈';
+});
