@@ -359,6 +359,230 @@ body {
     margin-bottom: 1rem;
 }
 
+/*Sign Up Section */
+form body {
+    font-family: "Inter", sans-serif;
+    background: #f4f6fa;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.signup-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 2rem;
+}
+
+.signup-card {
+    background: #fff;
+    max-width: 420px;
+    width: 100%;
+    padding: 2rem;
+    border-radius: 1.25rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.signup-card h1 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+}
+
+.signup-card .subtext {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* ===== Social Buttons ===== */
+.social-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-btn {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.social-btn.google {
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #444;
+}
+
+.social-btn.google:hover {
+    background: #f5f5f5;
+}
+
+.social-btn.facebook {
+    background: #1877f2;
+    color: #fff;
+}
+
+.social-btn.facebook:hover {
+    background: #145dc9;
+}
+
+/* ===== Divider ===== */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #999;
+    font-size: 0.9rem;
+    margin: 1rem 0;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+}
+
+.divider span {
+    padding: 0 0.75rem;
+    background: #fff;
+}
+
+/* ===== Form Inputs ===== */
+.input-group {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.input-group label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.35rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.65rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #1675f1;
+    box-shadow: 0 0 0 2px rgba(22, 117, 241, 0.1);
+}
+
+/* ===== Password Visibility Toggle ===== */
+.password-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.password-wrapper input {
+    flex: 1;
+}
+
+.toggle-visibility {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-visibility svg {
+    width: 20px;
+    height: 20px;
+    stroke: #666;
+    transition: stroke 0.2s ease;
+}
+
+.toggle-visibility:hover svg {
+    stroke: #1675f1;
+}
+
+/* ===== Password Strength ===== */
+.password-strength {
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+/* ===== Feedback Messages ===== */
+.feedback {
+    font-size: 0.8rem;
+    color: red;
+    display: block;
+    margin-top: 0.25rem;
+}
+
+/* ===== Signup Button ===== */
+.signup-btn {
+    background: #1675f1;
+    color: white;
+    border: none;
+    padding: 0.85rem;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 0.75rem;
+}
+
+.signup-btn:hover {
+    background: #0f5dd1;
+}
+
+/* ===== Redirect Link ===== */
+.redirect {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.redirect a {
+    color: #1675f1;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.redirect a:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Mobile Optimization ===== */
+@media (max-width: 480px) {
+  .signup-card {
+    padding: 1.5rem;
+  }
+  .signup-card h1 {
+    font-size: 1.5rem;
+  }
+}
+
 /* Responsive Design for smaller screens */
 @media (max-width: 768px) {
     .feature-cards {
