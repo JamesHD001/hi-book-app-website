@@ -927,15 +927,18 @@ body {
 
 /* Home Screen Page*/
 
-    .home-container {
+    .welcome-container {
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(8px);
       padding: 2rem;
+      margin: 80px;
       border-radius: 1.5rem;
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
       max-width: 500px;
       width: 90%;
+      height: 150%;
       animation: fadeIn 1s ease-in-out;
+      align-self: center;
     }
 
     @keyframes fadeIn {
@@ -943,35 +946,37 @@ body {
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .home-container h1 {
+    .welcome-container h1 {
       font-size: 2rem;
       margin-bottom: 1rem;
+      text-align: center;
     }
 
-    .home-container p {
+    .welcome-container p {
       font-size: 1.1rem;
       margin-bottom: 1.5rem;
+      text-align: center;
     }
 
-    .home-buttons {
+    .welcome-buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
       justify-content: center;
     }
 
-    .home-btn {
+    .welcomee-btn {
       background: white;
       color: #0077b6;
       padding: 0.8rem 1.5rem;
-      border-radius: 1rem;
+      border-radius: 5px;
       font-weight: bold;
       text-decoration: none;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       transition: all 0.3s ease;
     }
 
-    .home-btn:hover {
+    .welcome-btn:hover {
       transform: scale(1.05);
       box-shadow: 0 6px 15px rgba(0,0,0,0.3);
     }
