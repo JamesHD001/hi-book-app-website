@@ -12,25 +12,66 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Winky Rough:wght@300;400;600&display=swap" rel="stylesheet">
     </head>
+
     <body>
         <header>
-            <nav class="main-navbar">
-                <ul>
-                    <li><a href="home.html" class="active">Home</a></li>
-                    <li><a href="friends.html">Friends</a></li>
-                    <li><a href="messages.html">Messages</a></li>
-                    <li><a href="notifications.html">Notifications</a></li>
-                    <li><a href="profile.html">Profile</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                </ul>
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+            <nav>
+                <div class="navbar">
+                    <div class="gradient-logo" id="gradient-logo">Hi!Book</div>
+                    <ul class="nav-links" id="navLinks">
+                        <li>
+                            <a href="home.html">
+                                <i data-lucide="home"></i>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="messages.html">
+                                <i data-lucide="message-circle"></i>
+                                <span>Messages</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="friends.html">
+                                <i data-lucide="users"></i>
+                                <span>Friends</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="notifications.html">
+                                <i data-lucide="bell"></i>
+                                <span>Notifications</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="profile.html">
+                                <i data-lucide="user"></i>
+                                <span>Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="settings.html">
+                                <i data-lucide="settings"></i>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="about.html">
+                                <i data-lucide="info"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
             </nav>
         </header>
-        <main class="post-section">
+
+           <main class="post-section">
             <div class="create-post">
                 <label for="create-post"> Creat a post</label>
                 <input type="image", type="file" placeholder="Share a post...">
@@ -38,8 +79,12 @@
 
         </main>
         <footer>
-
         </footer>
-    
+        <script src="https://unpkg.com/lucide@latest/dist/lucide.min.js"></script>
+        <script>
+            lucide.createIcons();
+        </script>
+        <script src="./script.js"></script>
+
     </body>
 </html>

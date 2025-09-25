@@ -981,6 +981,39 @@ body {
       box-shadow: 0 6px 15px rgba(0,0,0,0.3);
     }
 
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links li a {
+  display: flex;
+  flex-direction: column; /* icon on top, text below */
+  align-items: center;
+  text-decoration: none;
+  font-family: var(--font-main);
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links li a i {
+  width: 22px;
+  height: 22px;
+  margin-bottom: 3px;
+}
+
+.nav-links li a:hover {
+  color: var(--accent1-color);
+  transform: scale(1.1);
+}
+
+.nav-links li a.active {
+  color: var(--accent2-color);
+}
 
 /* ===== Responsive Layout ===== */
 @media (max-width: 768px) {
