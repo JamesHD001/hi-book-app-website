@@ -27,7 +27,6 @@
             <li><a href="notifications.html" title="Notifications"><i data-lucide="bell"></i></a></li>
             <li><a href="profile.html" title="Profile"><i data-lucide="user"></i></a></li>
             <li><a href="settings.html" title="Settings"><i data-lucide="settings"></i></a></li>
-            <li><a href="about.html" title="About"><i data-lucide="info"></i></a></li>
           </ul>
 
           <div class="hamburger" id="hamburger">
@@ -40,87 +39,89 @@
     </header>
     
     <main class="post-section">
-        <!-- User info -->
-         <div class="user-feed">
-            <div class="user-card">
-                <div class="user-header">
-                    <img src="./images/Kid_Rick img3.jpg" alt="my profile picture">
-                    <div class="user-info">
-                        <span class="post-username">2ten</span>
-                    </div>
-                </div>
+      <div class="user-feed">
+        <div class="user-card">
+          <div class="user-header">
+            <img src="./images/Kid_Rick img3.jpg" alt="my profile picture">
+            <div class="user-info">
+              <span class="post-username">2ten</span>
             </div>
-         </div>
-        <div class="create-post">
-            <textarea id="create-post-text" placeholder="What's on your mind?"></textarea>
-            <div class="post-actions">
-                <label for="upload-image" class="upload-btn">
-                    <i data-lucide="image"></i> Add Photo
-                </label>
-            </div>
-            <input type="file" id="upload-image" accept="image/*" hidden>
-            <button type="button" class="post-btn">Post</button>
-        </div>
+          </div>
+        </div>            
+        <div id="posts-container"></div>
+      </div>
 
+        <!-- Create post section -->
+      <div class="create-post">
+        <textarea id="create-post-text" placeholder="What's on your mind?"></textarea>
+          <div class="post-actions">
+            <label for="upload-media" class="upload-btn">
+              <i data-lucide="image"></i> Add Photo/Video
+            </label>
+          </div>
+            <!-- Supports both images and videos -->
+            <input type="file" id="upload-media" accept="image/*,video/*" hidden>
+            <button type="button" class="post-btn" id="postButton">Post</button>
+        </div>
     <!-- MOCK FEED -->
         <div class="feed">
-            <!-- POST 1 -->
-            <div class="post-card">
-                <div class="post-header">
-                    <img src="https://i.pravatar.cc/40?img=1" alt="Profile" class="post-avatar">
-                    <div class="post-user-info">
-                    <span class="post-username">John Doe</span>
-                    <span class="post-time">2 hrs ago</span>
-                </div>
+          <div class="post-card">
+            <div class="post-header">
+              <img src="https://i.pravatar.cc/40?img=1" alt="Profile" class="post-avatar">
+              <div class="post-user-info">
+                <span class="post-username">John Doe</span>
+                <span class="post-time">2 hrs ago</span>
+             </div>
             </div>
+          </div>
             <div class="post-content">
-                <p>Just joined Hi!Book 🚀 Can't wait to connect with everyone here!</p>
+              <p>Just joined Hi!Book 🚀 Can't wait to connect with everyone here!</p>
             </div>
             <div class="post-actions-bar">
-                <button><i data-lucide="heart"></i> Like</button>
-                <button><i data-lucide="message-circle"></i> Comment</button>
-                <button><i data-lucide="share-2"></i> Share</button>
+              <button><i data-lucide="heart"></i> Like</button>
+              <button><i data-lucide="message-circle"></i> Comment</button>
+              <button><i data-lucide="share-2"></i> Share</button>
             </div>
         
-            <!-- POST 2 -->
-            <div class="post-card">
-                <div class="post-header">
-                    <img src="https://i.pravatar.cc/40?img=5" alt="Profile" class="post-avatar">
-                    <div class="post-user-info">
-                    <span class="post-username">Sarah Lee</span>
-                    <span class="post-time">5 hrs ago</span>
-                </div>
+          <!-- POST 2 -->
+          <div class="post-card">
+            <div class="post-header">
+              <img src="https://i.pravatar.cc/40?img=5" alt="Profile" class="post-avatar">
+              <div class="post-user-info">
+              <span class="post-username">Sarah Lee</span>
+              <span class="post-time">5 hrs ago</span>
             </div>
+          </div>
             <div class="post-content">
-                <p>Beautiful sunset today 🌅</p>
-                <img src="https://picsum.photos/500/300" alt="Post image" class="post-image">
-            </div>
-            <div class="post-actions-bar">
-                <button><i data-lucide="heart"></i> Like</button>
-                <button><i data-lucide="message-circle"></i> Comment</button>
-                <button><i data-lucide="share-2"></i> Share</button>
-            </div>
+            <p>Beautiful sunset today 🌅</p>
+            <img src="https://picsum.photos/500/300" alt="Post image" class="post-image">
+          </div>
+          <div class="post-actions-bar">
+            <button><i data-lucide="heart"></i> Like</button>
+            <button><i data-lucide="message-circle"></i> Comment</button>
+            <button><i data-lucide="share-2"></i> Share</button>
+          </div>
         
         </div>
-        </main>
+      </main>
 
     <!-- LUCIDE ICONS -->
-    <!-- <script src="https://unpkg.com/lucide@latest"></script> -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        lucide.createIcons();
+      <script src="https://unpkg.com/lucide@latest"></script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          lucide.createIcons();
 
-        // Highlight active link based on current page
-        const currentPage = window.location.pathname.split("/").pop();
-        document.querySelectorAll(".main-nav-links a").forEach(link => {
-          if (link.getAttribute("href") === currentPage) {
-            link.classList.add("active");
-          }
+          // Highlight active link based on current page
+          const currentPage = window.location.pathname.split("/").pop();
+          document.querySelectorAll(".main-nav-links a").forEach(link => {
+            if (link.getAttribute("href") === currentPage) {
+              link.classList.add("active");
+            }
+          });
         });
-      });
-    </script>
+      </script>
 
-    <!-- CUSTOM SCRIPT -->
-    <script src="./script.js"></script>
+      <!-- CUSTOM SCRIPT -->
+      <script src="./script.js"></script>
   </body>
 </html>

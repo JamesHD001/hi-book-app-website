@@ -167,3 +167,88 @@ document.querySelector("form").addEventListener("submit", function(e) {
   // If successful:
   window.location.href = "home.html";
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const postButton = document.getElementById("postButton");
+    const postText = document.getElementById("create-post-text");
+    const postsContainer = document.getElementById("posts-container");
+
+    postButton.addEventListener("click", () => {
+        const text = postText.value.trim();
+
+        if (text === "") {
+            alert("You can't post an empty message!");
+            return;
+        }
+
+        // Create post element
+        const postDiv = document.createElement("div");
+        postDiv.classList.add("post");
+        postDiv.innerHTML = `
+            <div class="post-author">2ten</div>
+            <div class="post-content">${text}</div>
+        `;
+
+        // Insert new post at the top
+        postsContainer.prepend(postDiv);
+
+        // Clear the textarea
+        postText.value = "";
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const postButton = document.getElementById("postButton");
+    const postText = document.getElementById("create-post-text");
+    const postsContainer = document.getElementById("posts-container");
+    const mediaInput = document.getElementById("upload-media");
+
+    let selectedMedia = null;
+
+    // Store selected file temporarily
+    mediaInput.addEventListener("change", (event) => {
+        if (event.target.files.length > 0) {
+            selectedMedia = event.target.files[0];
+        }
+    });
+
+    postButton.addEventListener("click", () => {
+        const text = postText.value.trim();
+
+        if (text === "" && !selectedMedia) {
+            alert("You can't post an empty message!");
+            return;
+        }
+
+        // Create post element
+        const postDiv = document.createElement("div");
+        postDiv.classList.add("post");
+
+        // Build the inner HTML
+        let postContent = `
+            <div class="post-author">2ten</div>
+            ${text ? `<div class="post-content">${text}</div>` : ""}
+        `;
+
+        // Handle media (image/video)
+        if (selectedMedia) {
+            const mediaURL = URL.createObjectURL(selectedMedia);
+
+            if (selectedMedia.type.startsWith("image/")) {
+                postContent += `<img src="${mediaURL}" alt="Uploaded Image">`;
+            } else if (selectedMedia.type.startsWith("video/")) {
+                postContent += `<video src="${mediaURL}" controls></video>`;
+            }
+        }
+
+        postDiv.innerHTML = postContent;
+
+        // Insert new post at the top
+        postsContainer.prepend(postDiv);
+
+        // Clear textarea & media selection
+        postText.value = "";
+        mediaInput.value = "";
+        selectedMedia = null;
+    });
+});
