@@ -1,90 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Connect with friends and family using Hi!Book. Share moments, chat, and stay updated with your loved ones.">
-        <meta name="keywords" content="Hi!Book, social media, connect, friends, family, chat, share">
-        <meta name="author" content="Hi!Book Team">
-        <title>Hi!Book - Home Page</title>
-        <link rel="stylesheet" href="./styles/hibook.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com" rel="preconnect">
-        <link rel="preconnect" href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Winky Rough:wght@300;400;600&display=swap" rel="stylesheet">
-    </head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Connect with friends and family using Hi!Book. Share moments, chat, and stay updated with your loved ones.">
+    <meta name="keywords" content="Hi!Book, social media, connect, friends, family, chat, share">
+    <meta name="author" content="Hi!Book Team">
+    <title>Hi!Book - Home</title>
 
-    <body>
-        <header>
-            <nav>
-                <div class="navbar">
-                    <div class="gradient-logo" id="gradient-logo">Hi!Book</div>
-                    <ul class="nav-links" id="navLinks">
-                        <li>
-                            <a href="home.html">
-                                <i data-lucide="home"></i>
-                                <span>Home</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="messages.html">
-                                <i data-lucide="message-circle"></i>
-                                <span>Messages</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="friends.html">
-                                <i data-lucide="users"></i>
-                                <span>Friends</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="notifications.html">
-                                <i data-lucide="bell"></i>
-                                <span>Notifications</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="profile.html">
-                                <i data-lucide="user"></i>
-                                <span>Profile</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="settings.html">
-                                <i data-lucide="settings"></i>
-                                <span>Settings</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="about.html">
-                                <i data-lucide="info"></i>
-                            </a>
-                        </li>
-                    </ul>
+    <link rel="stylesheet" href="./styles/hibook.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" rel="preconnect">
+    <link rel="preconnect" href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Rough:wght@300;400;600&display=swap" rel="stylesheet">
+  </head>
 
-                    <div class="hamburger" id="hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <nav>
+        <div class="main-navbar">
+          <div class="gradient-logo" id="gradient-logo">Hi!Book</div>
+          <ul class="main-nav-links" id="navLinks">
+            <li><a href="home.html" title="Home"><i data-lucide="home"></i></a></li>
+            <li><a href="messages.html" title="Messages"><i data-lucide="message-circle"></i></a></li>
+            <li><a href="friends.html" title="Friends"><i data-lucide="users"></i></a></li>
+            <li><a href="notifications.html" title="Notifications"><i data-lucide="bell"></i></a></li>
+            <li><a href="profile.html" title="Profile"><i data-lucide="user"></i></a></li>
+            <li><a href="settings.html" title="Settings"><i data-lucide="settings"></i></a></li>
+            <li><a href="about.html" title="About"><i data-lucide="info"></i></a></li>
+          </ul>
+
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <main class="post-section">
+        <!-- User info -->
+         <div class="user-feed">
+            <div class="user-card">
+                <div class="user-header">
+                    <img src="./images/Kid_Rick img3.jpg" alt="my profile picture">
+                    <div class="user-info">
+                        <span class="post-username">2ten</span>
                     </div>
                 </div>
-            </nav>
-        </header>
-
-           <main class="post-section">
-            <div class="create-post">
-                <label for="create-post"> Creat a post</label>
-                <input type="image", type="file" placeholder="Share a post...">
             </div>
+         </div>
+        <div class="create-post">
+            <textarea id="create-post-text" placeholder="What's on your mind?"></textarea>
+            <div class="post-actions">
+                <label for="upload-image" class="upload-btn">
+                    <i data-lucide="image"></i> Add Photo
+                </label>
+            </div>
+            <input type="file" id="upload-image" accept="image/*" hidden>
+            <button type="button" class="post-btn">Post</button>
+        </div>
 
+    <!-- MOCK FEED -->
+        <div class="feed">
+            <!-- POST 1 -->
+            <div class="post-card">
+                <div class="post-header">
+                    <img src="https://i.pravatar.cc/40?img=1" alt="Profile" class="post-avatar">
+                    <div class="post-user-info">
+                    <span class="post-username">John Doe</span>
+                    <span class="post-time">2 hrs ago</span>
+                </div>
+            </div>
+            <div class="post-content">
+                <p>Just joined Hi!Book 🚀 Can't wait to connect with everyone here!</p>
+            </div>
+            <div class="post-actions-bar">
+                <button><i data-lucide="heart"></i> Like</button>
+                <button><i data-lucide="message-circle"></i> Comment</button>
+                <button><i data-lucide="share-2"></i> Share</button>
+            </div>
+        
+            <!-- POST 2 -->
+            <div class="post-card">
+                <div class="post-header">
+                    <img src="https://i.pravatar.cc/40?img=5" alt="Profile" class="post-avatar">
+                    <div class="post-user-info">
+                    <span class="post-username">Sarah Lee</span>
+                    <span class="post-time">5 hrs ago</span>
+                </div>
+            </div>
+            <div class="post-content">
+                <p>Beautiful sunset today 🌅</p>
+                <img src="https://picsum.photos/500/300" alt="Post image" class="post-image">
+            </div>
+            <div class="post-actions-bar">
+                <button><i data-lucide="heart"></i> Like</button>
+                <button><i data-lucide="message-circle"></i> Comment</button>
+                <button><i data-lucide="share-2"></i> Share</button>
+            </div>
+        
+        </div>
         </main>
-        <footer>
-        </footer>
-        <script src="https://unpkg.com/lucide@latest/dist/lucide.min.js"></script>
-        <script>
-            lucide.createIcons();
-        </script>
-        <script src="./script.js"></script>
 
-    </body>
+    <!-- LUCIDE ICONS -->
+    <!-- <script src="https://unpkg.com/lucide@latest"></script> -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        lucide.createIcons();
+
+        // Highlight active link based on current page
+        const currentPage = window.location.pathname.split("/").pop();
+        document.querySelectorAll(".main-nav-links a").forEach(link => {
+          if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+          }
+        });
+      });
+    </script>
+
+    <!-- CUSTOM SCRIPT -->
+    <script src="./script.js"></script>
+  </body>
 </html>

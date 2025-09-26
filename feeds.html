@@ -1,35 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Connect with friends and family using Hi!Book. Share moments, chat, and stay updated with your loved ones.">
-  <meta name="keywords" content="Hi!Book, social media, connect, friends, family, chat, share">
-  <meta name="author" content="Hi!Book Team">
-  <title>Hi!Book - Connect with Friends</title>
-  <link rel="stylesheet" href="./styles/hibook.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com" rel="preconnect">
-  <link rel="preconnect" href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Winky Rough:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Connect with friends and family using Hi!Book. Share moments, chat, and stay updated with your loved ones.">
+    <meta name="keywords" content="Hi!Book, social media, connect, friends, family, chat, share">
+    <meta name="author" content="Hi!Book Team">
+    <title>Hi!Book - Home</title>
 
-<body>
-  <header>
+    <link rel="stylesheet" href="./styles/hibook.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" rel="preconnect">
+    <link rel="preconnect" href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Rough:wght@300;400;600&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header>
       <nav>
-        <div class="navbar">
-        <div class="gradient-logo" id="gradient-logo">Hi!Book</div>
-        
-        <ul class="nav-links" id="navLinks">
-          <li><a href="Features.html">Features</a></li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="signup.html">Sign Up</a></li>
-          <li><a href="about.html">About Us</a></li>
-        </ul>
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
+        <div class="main-navbar">
+          <div class="gradient-logo" id="gradient-logo">Hi!Book</div>
+          <ul class="main-nav-links" id="navLinks">
+            <li><a href="home.html" title="Home"><i data-lucide="home"></i></a></li>
+            <li><a href="messages.html" title="Messages"><i data-lucide="message-circle"></i></a></li>
+            <li><a href="friends.html" title="Friends"><i data-lucide="users"></i></a></li>
+            <li><a href="notifications.html" title="Notifications"><i data-lucide="bell"></i></a></li>
+            <li><a href="profile.html" title="Profile"><i data-lucide="user"></i></a></li>
+            <li><a href="settings.html" title="Settings"><i data-lucide="settings"></i></a></li>
+            <li><a href="about.html" title="About"><i data-lucide="info"></i></a></li>
+          </ul>
+
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </nav>
+    </header>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        lucide.createIcons();
 
-  </header>
+        // Highlight active link based on current page
+        const currentPage = window.location.pathname.split("/").pop();
+        document.querySelectorAll(".main-nav-links a").forEach(link => {
+          if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+          }
+        });
+      });
+    </script>
+
+    <!-- CUSTOM SCRIPT -->
+    <script src="./script.js"></script>
+  </body>
+</html>
