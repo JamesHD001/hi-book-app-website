@@ -8,7 +8,7 @@
 
 // Highlight the active link based on current page
 document.addEventListener("DOMContentLoaded", function () {
-  const currentPage = window.location.pathname.split("/").pop(); // e.g. about.html
+  const currentPage = window.location.pathname.split("/").pop();
   const navLinks = document.querySelectorAll("nav ul li a");
 
   navLinks.forEach(link => {
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
         color = "orange";
         break;
       case 3:
-      case 4:
+      case 8:
         message = "Strong";
         color = "green";
         break;
@@ -128,7 +128,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    alert("Signup successful! Welcome to Hi!Book.");
+    alert("Signup successful! Welcome to Hi!Book. ");
+    window.location.href = "login.html";
     signupForm.reset();
     passwordStrength.textContent = "";
     lucide.createIcons(); // Reset icons after reset
@@ -250,5 +251,80 @@ document.addEventListener("DOMContentLoaded", () => {
         postText.value = "";
         mediaInput.value = "";
         selectedMedia = null;
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const postButton = document.getElementById("postButton");
+    const postText = document.getElementById("create-post-text");
+    const postsContainer = document.getElementById("posts-container");
+    const mediaInput = document.getElementById("upload-media");
+    const mediaPreview = document.getElementById("media-preview");
+
+    let selectedMedia = null;
+
+    function clearMedia() {
+        selectedMedia = null;
+        mediaInput.value = "";
+        mediaPreview.innerHTML = "";
+    }
+
+    // Show preview when file selected
+    mediaInput.addEventListener("change", (event) => {
+        clearMedia();
+        if (event.target.files.length > 0) {
+            selectedMedia = event.target.files[0];
+            const mediaURL = URL.createObjectURL(selectedMedia);
+
+            let previewHTML = "";
+            if (selectedMedia.type.startsWith("image/")) {
+                previewHTML = `<img src="${mediaURL}" alt="Preview Image">`;
+            } else if (selectedMedia.type.startsWith("video/")) {
+                previewHTML = `<video src="${mediaURL}" controls></video>`;
+            }
+
+            // Add remove button
+            mediaPreview.innerHTML = `
+                ${previewHTML}
+                <button class="media-remove-btn" title="Remove">&times;</button>
+            `;
+
+            // Attach remove event
+            document.querySelector(".media-remove-btn").addEventListener("click", clearMedia);
+        }
+    });
+
+    // Handle posting
+    postButton.addEventListener("click", () => {
+        const text = postText.value.trim();
+
+        if (text === "" && !selectedMedia) {
+            alert("You can't post an empty message!");
+            return;
+        }
+
+        const postDiv = document.createElement("div");
+        postDiv.classList.add("post");
+
+        let postContent = `
+            <div class="post-author">2ten</div>
+            ${text ? `<div class="post-content">${text}</div>` : ""}
+        `;
+
+        if (selectedMedia) {
+            const mediaURL = URL.createObjectURL(selectedMedia);
+            if (selectedMedia.type.startsWith("image/")) {
+                postContent += `<img src="${mediaURL}" alt="Uploaded Image">`;
+            } else if (selectedMedia.type.startsWith("video/")) {
+                postContent += `<video src="${mediaURL}" controls></video>`;
+            }
+        }
+
+        postDiv.innerHTML = postContent;
+        postsContainer.prepend(postDiv);
+
+        // Reset inputs
+        postText.value = "";
+        clearMedia();
     });
 });
