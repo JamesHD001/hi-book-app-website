@@ -328,3 +328,69 @@ document.addEventListener("DOMContentLoaded", () => {
         clearMedia();
     });
 });
+
+// Go Live modal logic
+const goLiveBtn = document.getElementById("goLiveBtn");
+const goLiveModal = document.getElementById("goLiveModal");
+const cancelGoLive = document.getElementById("cancelGoLive");
+const startGoLive = document.getElementById("startGoLive");
+const liveTitleInput = document.getElementById("liveTitle");
+
+goLiveBtn.addEventListener("click", () => {
+  goLiveModal.style.display = "flex";
+});
+
+cancelGoLive.addEventListener("click", () => {
+  goLiveModal.style.display = "none";
+});
+
+startGoLive.addEventListener("click", () => {
+  const title = liveTitleInput.value.trim();
+  if (!title) {
+    alert("Please enter a stream title.");
+    return;
+  }
+  goLiveModal.style.display = "none";
+  alert(`Going live with title: ${title}`);
+  // Later: Redirect to live streaming page with title passed as query param
+});
+window.addEventListener("click", (e) => {
+  if (e.target === goLiveModal) {
+    goLiveModal.style.display = "none";
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+        lucide.createIcons();
+
+        // Tab switching
+        const tabs = document.querySelectorAll(".tab");
+        const panes = document.querySelectorAll(".tab-pane");
+
+        tabs.forEach(tab => {
+          tab.addEventListener("click", () => {
+            tabs.forEach(t => t.classList.remove("active"));
+            panes.forEach(p => p.classList.remove("active"));
+
+            tab.classList.add("active");
+            document.getElementById(tab.dataset.tab).classList.add("active");
+          });
+        });
+
+        // Posting from profile
+        const postBtn = document.getElementById("profile-post-btn");
+        const postText = document.getElementById("profile-post-text");
+        const postsContainer = document.getElementById("profile-posts-container");
+
+        postBtn.addEventListener("click", () => {
+          const text = postText.value.trim();
+          if (text === "") return;
+
+          const postDiv = document.createElement("div");
+          postDiv.classList.add("profile-post");
+          postDiv.innerHTML = `<p>${text}</p>`;
+
+          postsContainer.prepend(postDiv);
+          postText.value = "";
+        });
+      });

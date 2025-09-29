@@ -3,10 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Connect with friends and family using Hi!Book. Share moments, chat, and stay updated with your loved ones.">
-    <meta name="keywords" content="Hi!Book, social media, connect, friends, family, chat, share">
-    <meta name="author" content="Hi!Book Team">
-    <title>Hi!Book - Home</title>
+    <meta name="description" content="Your Hi!Book Profile">
+    <title>Hi!Book - Profile</title>
 
     <link rel="stylesheet" href="./styles/hibook.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" rel="preconnect">
@@ -15,20 +13,18 @@
   </head>
 
   <body>
-    <!-- HEADER -->
     <header>
       <nav>
         <div class="main-navbar">
-          <div  class="gradient-logo" id="gradient-logo"><a href="index.html">Hi!Book</a></div>
+          <div class="gradient-logo" id="gradient-logo"><a href="index.html">Hi!Book</a></div>
           <ul class="main-nav-links" id="navLinks">
             <li><a href="home.html" title="Home"><i data-lucide="home"></i></a></li>
             <li><a href="messages.html" title="Messages"><i data-lucide="message-circle"></i></a></li>
             <li><a href="friends.html" title="Friends"><i data-lucide="users"></i></a></li>
             <li><a href="notifications.html" title="Notifications"><i data-lucide="bell"></i></a></li>
-            <li><a href="profile.html" title="Profile"><i data-lucide="user"></i></a></li>
+            <li><a href="profile.html" title="Profile" class="active"><i data-lucide="user"></i></a></li>
             <li><a href="settings.html" title="Settings"><i data-lucide="settings"></i></a></li>
           </ul>
-
           <div class="hamburger" id="hamburger">
             <span></span>
             <span></span>
@@ -37,22 +33,76 @@
         </div>
       </nav>
     </header>
+
+    <!-- PROFILE SECTION -->
+    <section class="profile-section">
+      <!-- Cover Photo -->
+      <div class="cover-photo">
+        <img src="./images/Rick Story Cover.jpg" alt="Cover Photo">
+      </div>
+
+      <!-- Profile Info -->
+      <div class="profile-header">
+        <div class="profile-pic">
+          <img src="./images/Kid_Rick img3.jpg" alt="Profile Picture">
+        </div>
+        <div class="profile-details">
+          <h1 class="profile-name">2ten</h1>
+          <p class="profile-username">@2ten_dev</p>
+          <p class="profile-bio">Software Engineering student. Writer. Dreamer. 👨‍💻✨</p>
+          <div class="profile-actions">
+            <button class="btn primary-btn">Edit Profile</button>
+            <button class="go-live-btn" id="goLiveBtn">🎥 Go Live</button>
+            <button class="btn message-btn">Message</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="profile-tabs">
+        <button class="tab active" data-tab="posts">Posts</button>
+        <button class="tab" data-tab="friends">Friends</button>
+        <button class="tab" data-tab="photos">Photos</button>
+        <button class="tab" data-tab="about">About</button>
+      </div>
+
+      <!-- Tab Content -->
+      <div class="tab-content">
+        <div id="posts" class="tab-pane active">
+          <div class="create-post">
+            <textarea id="profile-post-text" placeholder="Write something..."></textarea>
+            <button class="post-btn" id="profile-post-btn">Post</button>
+          </div>
+          <div id="profile-posts-container"></div>
+        </div>
+        
+        <div id="friends" class="tab-pane">
+          <p>You don't have any friends yet. <a href="friends.html">Find friends</a></p>
+        </div>
+
+        <div id="photos" class="tab-pane">
+          <p>No photos uploaded yet.</p>
+        </div>
+
+        <div id="about" class="tab-pane">
+          <p>This is where your bio, birthday, and other details will go.</p>
+        </div>
+      </div>
+    </section>
+
+      <!-- Go Live Modal
+    <div id="goLiveModal" class="modal">
+      <div class="modal-content">
+        <h2>Start Live Stream</h2>
+        <input type="text" id="liveTitle" placeholder="Enter stream title...">
+        <div class="modal-actions">
+          <button class="btn cancel-btn" id="cancelGoLive">Cancel</button>
+          <button class="btn start-btn" id="startGoLive">Start Live</button>
+        </div>
+      </div>
+    </div> -->
+
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        lucide.createIcons();
-
-        // Highlight active link based on current page
-        const currentPage = window.location.pathname.split("/").pop();
-        document.querySelectorAll(".main-nav-links a").forEach(link => {
-          if (link.getAttribute("href") === currentPage) {
-            link.classList.add("active");
-          }
-        });
-      });
-    </script>
-
-    <!-- CUSTOM SCRIPT -->
     <script src="./script.js"></script>
   </body>
 </html>
