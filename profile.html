@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" rel="preconnect">
     <link rel="preconnect" href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Winky+Rough:wght@300;400;600&display=swap" rel="stylesheet">
+    
   </head>
 
   <body>
@@ -34,75 +35,74 @@
       </nav>
     </header>
 
+    <!-- GUEST PROMPT MODAL -->
+    <div id="loginPromptModal" class="modal">
+      <div class="modal-content">
+        <h2>Login Required</h2>
+        <p>You need to log in or sign up to view your profile.</p>
+        <button id="goToLogin" class="btn primary-btn">Log In</button>
+        <button id="goToSignup" class="btn secondary-btn">Sign Up</button>
+      </div>
+    </div>
+
     <!-- PROFILE SECTION -->
     <section class="profile-section">
-      <!-- Cover Photo -->
+
       <div class="cover-photo">
         <img src="./images/Rick Story Cover.jpg" alt="Cover Photo">
       </div>
 
-      <!-- Profile Info -->
       <div class="profile-header">
         <div class="profile-pic">
-          <img src="./images/Kid_Rick img3.jpg" alt="Profile Picture">
+          <img id="profile-picture" src="./images/Kid_Rick img3.jpg" alt="Profile Picture">
         </div>
         <div class="profile-details">
-          <h1 class="profile-name">2ten</h1>
-          <p class="profile-username">@2ten_dev</p>
-          <p class="profile-bio">Software Engineering student. Writer. Dreamer. 👨‍💻✨</p>
+          <h1 class="profile-name" id="profile-name">2ten</h1>
+          <p class="profile-username" id="profile-username">@2ten_dev</p>
+          <p class="profile-bio" id="profile-bio">Software Engineering student. Writer. Dreamer. 👨‍💻✨</p>
           <div class="profile-actions">
             <button class="btn primary-btn">Edit Profile</button>
             <button class="go-live-btn" id="goLiveBtn">🎥 Go Live</button>
             <button class="btn message-btn">Message</button>
           </div>
         </div>
-      </div>
 
-      <!-- Tabs -->
-      <div class="profile-tabs">
-        <button class="tab active" data-tab="posts">Posts</button>
-        <button class="tab" data-tab="friends">Friends</button>
-        <button class="tab" data-tab="photos">Photos</button>
-        <button class="tab" data-tab="about">About</button>
-      </div>
+        <!-- Tabs -->
+        <div class="profile-tabs">
+          <button class="tab active" data-tab="posts">Posts</button>
+          <button class="tab" data-tab="friends">Friends</button>
+          <button class="tab" data-tab="photos">Photos</button>
+          <button class="tab" data-tab="about">About</button>
+        </div>
 
-      <!-- Tab Content -->
-      <div class="tab-content">
-        <div id="posts" class="tab-pane active">
-          <div class="create-post">
-            <textarea id="profile-post-text" placeholder="Write something..."></textarea>
-            <button class="post-btn" id="profile-post-btn">Post</button>
+        <!-- Tab Content -->
+        <div class="tab-content">
+          <div id="posts" class="tab-pane active">
+            <div class="create-post">
+              <textarea id="profile-post-text" placeholder="Write something..."></textarea>
+              <button class="post-btn" id="profile-post-btn">Post</button>
+            </div>
+            <div id="profile-posts-container"></div>
           </div>
-          <div id="profile-posts-container"></div>
-        </div>
-        
-        <div id="friends" class="tab-pane">
-          <p>You don't have any friends yet. <a href="friends.html">Find friends</a></p>
-        </div>
+          
+          <div id="friends" class="tab-pane">
+            <p>You don't have any friends yet. <a href="friends.html">Find friends</a></p>
+          </div>
 
-        <div id="photos" class="tab-pane">
-          <p>No photos uploaded yet.</p>
-        </div>
+          <div id="photos" class="tab-pane">
+            <p>No photos uploaded yet.</p>
+          </div>
 
-        <div id="about" class="tab-pane">
-          <p>This is where your bio, birthday, and other details will go.</p>
+          <div id="about" class="tab-pane">
+            <p>This is where your bio, birthday, and other details will go.</p>
+          </div>
         </div>
       </div>
     </section>
 
-      <!-- Go Live Modal
-    <div id="goLiveModal" class="modal">
-      <div class="modal-content">
-        <h2>Start Live Stream</h2>
-        <input type="text" id="liveTitle" placeholder="Enter stream title...">
-        <div class="modal-actions">
-          <button class="btn cancel-btn" id="cancelGoLive">Cancel</button>
-          <button class="btn start-btn" id="startGoLive">Start Live</button>
-        </div>
-      </div>
-    </div> -->
-
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script type="module" src="./auth/auth.js"></script>
     <script src="./script.js"></script>
+
   </body>
 </html>

@@ -19,17 +19,15 @@
     <header>
       <nav>
         <div class="navbar">
-          <div  class="gradient-logo" id="gradient-logo"><a href="index.html">Hi!Book</a></div>
+          <div class="gradient-logo" id="gradient-logo"><a href="index.html">Hi!Book</a></div>
           <ul class="nav-links" id="navLinks">
             <li><a href="Features.html">Features</a></li>
             <li><a href="login.html">Login</a></li>
-            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="signup.html" class="active">Sign Up</a></li>
             <li><a href="about.html">About Us</a></li>
           </ul>
           <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
           </div>
         </div>
       </nav>
@@ -65,7 +63,7 @@
             <label for="password">Password</label>
             <div class="password-wrapper">
               <input id="password" type="password" placeholder="Create a password"
-              pattern=".{8,}" title="Password must be at least 8 characters long and contain a mix of uppercase, lowercase, numbers, and symbols" required>
+                pattern=".{8,}" title="Password must be at least 8 characters long and contain a mix of uppercase, lowercase, numbers, and symbols" required>
               <span class="toggle-visibility" data-target="password" data-lucide="eye"></span>
             </div>
             <div class="password-strength" id="passwordStrength"></div>
@@ -81,17 +79,19 @@
             <small class="feedback" id="confirmFeedback"></small>
           </div>
 
+          <small class="feedback" id="formFeedback"></small>
+
           <button type="submit" class="signup-btn">Sign Up</button>
           <p class="redirect">Already have an account? <a href="login.html">Login</a></p>
         </form>
       </div>
     </main>
-    
+
     <script src="./script.js"></script>
+    <!-- ✅ Firebase Signup Script -->
+    <script type="module" src="./auth/signup.js"></script>
     <script>
-     lucide.createIcons();
-     window.location.href = "login.html";
+      lucide.createIcons();
     </script>
-  
   </body>
 </html>

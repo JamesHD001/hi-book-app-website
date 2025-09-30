@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Connect with friends and family using Hi!Book. Share moments, chat, and stay updated with your loved ones.">
-    <meta name="keywords" content="Hi!Book, social media, connect, friends, family, chat, share">
-    <meta name="author" content="Hi!Book Team">
-    <title>Hi!Book - Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Your messages on Hi!Book" />
+    <title>Hi!Book - Messages</title>
 
-    <link rel="stylesheet" href="./styles/hibook.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com" rel="preconnect">
-    <link rel="preconnect" href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Winky+Rough:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/hibook.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Rough:wght@300;400;600&display=swap" rel="stylesheet"/>
   </head>
 
   <body>
@@ -19,7 +17,9 @@
     <header>
       <nav>
         <div class="main-navbar">
-          <div  class="gradient-logo" id="gradient-logo"><a href="index.html">Hi!Book</a></div>
+          <div class="gradient-logo" id="gradient-logo">
+            <a href="index.html">Hi!Book</a>
+          </div>
           <ul class="main-nav-links" id="navLinks">
             <li><a href="home.html" title="Home"><i data-lucide="home"></i></a></li>
             <li><a href="messages.html" title="Messages"><i data-lucide="message-circle"></i></a></li>
@@ -28,7 +28,6 @@
             <li><a href="profile.html" title="Profile"><i data-lucide="user"></i></a></li>
             <li><a href="settings.html" title="Settings"><i data-lucide="settings"></i></a></li>
           </ul>
-
           <div class="hamburger" id="hamburger">
             <span></span>
             <span></span>
@@ -37,22 +36,73 @@
         </div>
       </nav>
     </header>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        lucide.createIcons();
 
-        // Highlight active link based on current page
-        const currentPage = window.location.pathname.split("/").pop();
-        document.querySelectorAll(".main-nav-links a").forEach(link => {
-          if (link.getAttribute("href") === currentPage) {
-            link.classList.add("active");
-          }
-        });
+    <!-- MESSAGES SECTION -->
+    <div class="messages-container">
+      <!-- Sidebar -->
+      <div class="conversations-sidebar" id="conversationsSidebar">
+        <!-- Empty state message -->
+        <div class="empty-state" id="emptyState">
+          💬 No conversations yet.<br>Start a chat with a friend!
+        </div>
+      </div>
+
+      <!-- Chat Area -->
+      <div class="chat-area">
+        <div class="chat-header" id="chatHeader">Select a conversation</div>
+        <div class="chat-messages" id="chatMessages"></div>
+
+        <!-- Input Bar -->
+        <div class="chat-input">
+          <textarea id="chatMessage" rows="1" placeholder="Type a message..." disabled></textarea>
+          <button id="sendMessage" disabled>Send</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Button -->
+    <button class="new-chat-btn" id="newChatBtn" title="Start New Chat">
+      <i data-lucide="plus"></i>
+    </button>
+
+    <!-- SCRIPTS -->
+    <script type="module" src="./auth/auth.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="./script.js"></script>
+    <script>
+      const sidebar = document.getElementById("conversationsSidebar");
+      const emptyState = document.getElementById("emptyState");
+      const newChatBtn = document.getElementById("newChatBtn");
+
+      // Example: Load conversations dynamically (for now just simulate one)
+      const conversations = []; // Empty means no chats yet
+
+      function loadConversations() {
+        if (conversations.length === 0) {
+          emptyState.style.display = "flex";
+        } else {
+          emptyState.style.display = "none";
+          conversations.forEach(conv => {
+            const div = document.createElement("div");
+            div.classList.add("conversation");
+            div.innerHTML = `
+              <img src="${conv.avatar}" alt="User">
+              <div>
+                <strong>${conv.name}</strong>
+                <p style="font-size: 0.85rem; color: #666;">${conv.lastMessage}</p>
+              </div>
+            `;
+            sidebar.appendChild(div);
+          });
+        }
+      }
+
+      loadConversations();
+
+      // Handle new chat button click
+      newChatBtn.addEventListener("click", () => {
+        alert("Start a new chat! (Later, this will open a friend search modal)");
       });
     </script>
-
-    <!-- CUSTOM SCRIPT -->
-    <script src="./script.js"></script>
   </body>
 </html>
