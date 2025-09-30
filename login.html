@@ -1,83 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Connect with friends and family using Hi!Book. Share moments, chat, and stay updated with your loved ones.">
-  <meta name="keywords" content="Hi!Book, social media, connect, friends, family, chat, share">
-  <meta name="author" content="Hi!Book Team">
-  <title>Hi!Book - Login</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Connect with friends and family using Hi!Book. Share moments, chat, and stay updated with your loved ones." />
+    <meta name="keywords" content="Hi!Book, social media, connect, friends, family, chat, share" />
+    <meta name="author" content="Hi!Book Team" />
+    <title>Hi!Book - Login</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Winky+Rough&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/hibook.css">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/hibook.css" />
 
-<body>
-  <header>
-    <nav>
-      <div class="navbar">
-        <div class="gradient-logo" id="gradient-logo">
-          <a href="index.html">Hi!Book</a>
-        </div>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="features.html">Features</a></li>
-          <li><a href="login.html" class="active">Login</a></li>
-          <li><a href="signup.html">Sign Up</a></li>
-          <li><a href="about.html">About Us</a></li>
-        </ul>
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-    </nav>
-  </header>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
 
-  <main class="form-section">
-    <div class="form-container">
-      <h1 class="form-title">Welcome Back</h1>
-      <p class="form-subtext">Log in to continue connecting with friends.</p>
-
-      <form id="loginForm" novalidate>
-        <div class="input-group">
-          <label for="email">Email</label>
-          <input id="email" type="email" placeholder="Enter your email" autocomplete="email" required>
-        </div>
-
-        <div class="input-group password-group">
-          <label for="password">Password</label>
-          <div class="password-wrapper">
-            <input id="password" type="password" placeholder="Enter your password" autocomplete="current-password" required>
-            <button type="button" class="toggle-password" id="togglePassword" aria-label="Show or hide password">
-              &#128065;
-            </button>
+  <body>
+    <header>
+      <nav>
+        <div class="navbar">
+          <div class="gradient-logo">
+            <a href="index.html">Hi!Book</a>
+          </div>
+          <ul class="nav-links">
+            <li><a href="features.html">Features</a></li>
+            <li><a href="login.html" class="active">Login</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+          <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
           </div>
         </div>
+      </nav>
+    </header>
 
-        <button type="submit" class="login-btn">Login</button>
+    <main class="form-section">
+      <div class="form-container">
+        <h1 class="form-title">Welcome Back</h1>
+        <p class="form-subtext">Log in to continue connecting with friends.</p>
 
-        <p class="redirect">
-          Don't have an account? <a href="signup.html">Sign Up</a>
-        </p>
-      </form>
+        <form id="loginForm" novalidate>
+          <div class="input-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="Enter your email" autocomplete="email" required />
+          </div>
 
-      <!-- Area to display error or success messages -->
-      <div id="loginMessage" class="message"></div>
-      <p id="loginMessage" class="message"></p>
+          <div class="input-group password-group">
+            <label for="password">Password</label>
+            <div class="password-wrapper">
+              <input id="password" type="password" placeholder="Enter your password" autocomplete="current-password" required />
+              <span class="toggle-visibility" data-target="password" role="button" tabindex="0" aria-label="Show or hide password">
+                <i data-lucide="eye"></i>
+              </span>
+            </div>
+          </div>
 
-    </div>
-  </main>
+          <button type="submit" class="login-btn">Login</button>
 
-  <footer>
-    <p>&copy; 2025 Hi!Book. All rights reserved.</p>
-  </footer>
+          <p class="redirect">
+            Don't have an account? <a href="signup.html">Sign Up</a>
+          </p>
+        </form>
 
-  <!-- JS Files -->
-  <script type="module" src="./auth/login.js"></script>
-  <script src="./script.js"></script>
-</body>
+        <div id="loginMessage" class="message"></div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Hi!Book. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="./auth/login.js"></script>
+    <script src="./togglePassword.js"></script>
+    <script src="./script.js"></script>
+    <script>lucide.createIcons();</script>
+  </body>
 </html>
