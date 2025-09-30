@@ -1,62 +1,72 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+// auth/signup.js
+import { auth, db } from "./firebaseConfig.js";
+import { createUserWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+import { doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCKjpnpAGwGwtyzv13AiETaFJTUgVSU3Xo",
-  authDomain: "hi-bookapp.firebaseapp.com",
-  projectId: "hi-bookapp",
-  storageBucket: "hi-bookapp.firebasestorage.app",
-  messagingSenderId: "833345574442",
-  appId: "1:833345574442:web:0adb7e6e5008167525d553",
-  measurementId: "G-DRB1QZP98C"
-};
+document.addEventListener("DOMContentLoaded", () => {
+  const signupForm = document.getElementById("signupForm");
+  const messageBox = document.getElementById("signupMessage"); // <-- add in HTML
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
+  signupForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-document.getElementById("signupForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const confirm = document.getElementById("confirm").value.trim();
 
-  const fullName = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value.trim();
-  const confirmPassword = document.getElementById("confirm").value.trim();
-  const formFeedback = document.getElementById("formFeedback");
+    // 🔒 Validation
+    if (!name || !email || !password || !confirm) {
+      return showMessage("All fields are required.", "error");
+    }
+    if (password !== confirm) {
+      return showMessage("Passwords do not match.", "error");
+    }
+    if (password.length < 8) {
+      return showMessage("Password must be at least 8 characters.", "error");
+    }
 
-  formFeedback.textContent = "";
-  formFeedback.style.color = "red";
+    try {
+      // ✨ Create user in Firebase Auth
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
 
-  // ✅ Client-side validation
-  if (password.length < 8) {
-    formFeedback.textContent = "Password must be at least 8 characters.";
-    return;
-  }
-  if (password !== confirmPassword) {
-    formFeedback.textContent = "Passwords do not match.";
-    return;
-  }
+      // ✨ Update profile with displayName
+      await updateProfile(user, { displayName: name });
 
-  try {
-    // Create user in Firebase Auth
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    const user = userCredential.user;
+      // ✨ Save user data in Firestore
+      await setDoc(doc(db, "users", user.uid), {
+        uid: user.uid,
+        name: name,
+        email: email,
+        bio: "Hey there! I'm new on Hi!Book 🚀", // default bio
+        username: email.split("@")[0], // default username from email
+        profilePic: "https://via.placeholder.com/150", // placeholder pic
+        createdAt: serverTimestamp()
+      });
 
-    // Store additional info in Firestore
-    await setDoc(doc(db, "users", user.uid), {
-      fullName,
-      email,
-      bio: "Hi! I'm new here😊",
-      profilePicture: "./images/default-avatar.png",
-      createdAt: new Date()
-    });
+      showMessage("Signup successful! Redirecting...", "success");
 
-    formFeedback.style.color = "green";
-    formFeedback.textContent = "Welcome to Hi!Book. Account created successfully✅! Redirecting...";
-    setTimeout(() => (window.location.href = "home.html"), 2000);
-  } catch (error) {
-    console.error(error);
-    formFeedback.textContent = "❌ " + error.message;
+      setTimeout(() => {
+        window.location.href = "home.html";
+      }, 1000);
+
+    } catch (error) {
+      console.error("Signup error:", error.code, error.message);
+
+      if (error.code === "auth/email-already-in-use") {
+        showMessage("This email is already registered.", "error");
+      } else if (error.code === "auth/weak-password") {
+        showMessage("Password is too weak. Please choose a stronger one.", "error");
+      } else {
+        showMessage("Signup failed. Please try again later.", "error");
+      }
+    }
+  });
+
+  // 📌 Helper to show messages
+  function showMessage(msg, type) {
+    messageBox.textContent = msg;
+    messageBox.className = `message ${type}`;
   }
 });

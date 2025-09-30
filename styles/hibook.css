@@ -1716,6 +1716,18 @@ body {
   transform: scale(1.1);
 }
 
+.message {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+.message.error {
+  color: red;
+}
+.message.success {
+  color: green;
+}
+
 /* MOBILE FRIENDLY - HIDE TOOLTIP */
 @media (max-width: 768px) {
   .main-nav-links li a::after {

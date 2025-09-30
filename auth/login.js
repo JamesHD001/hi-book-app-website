@@ -1,21 +1,6 @@
 // ./auth/login.js
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
-
-// ✅ Your Firebase config (from Firebase console)
-const firebaseConfig = {
-  apiKey: "AIzaSyCKjpnpAGwGwtyzv13AiETaFJTUgVSU3Xo",
-  authDomain: "hi-bookapp.firebaseapp.com",
-  projectId: "hi-bookapp",
-  storageBucket: "hi-bookapp.firebasestorage.app",
-  messagingSenderId: "833345574442",
-  appId: "1:833345574442:web:0adb7e6e5008167525d553",
-  measurementId: "G-DRB1QZP98C"
-};
-
-// ✅ Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+import { auth } from "./firebaseConfig.js";
+import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.getElementById("loginForm");
@@ -26,8 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 👁 Toggle password visibility
   togglePassword.addEventListener("click", () => {
-    const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
-    passwordInput.setAttribute("type", type);
+    const type = passwordInput.type === "password" ? "text" : "password";
+    passwordInput.type = type;
     togglePassword.textContent = type === "password" ? "👁️" : "🙈";
   });
 
@@ -48,10 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       showMessage("Login successful! Redirecting...", "success");
 
-      // Save session in localStorage
+      // (Optional) Save quick reference in localStorage
       localStorage.setItem("hibook_user", JSON.stringify({
         uid: user.uid,
-        email: user.email
+        email: user.email,
+        displayName: user.displayName || ""
       }));
 
       setTimeout(() => {
