@@ -1622,11 +1622,15 @@ p a:hover {
     opacity: 1;
   }
 }
-
-/* ================================
-   Hi!Book Legal Pages Styles
-   (Privacy Policy, Terms, Data Deletion)
-   ================================ */
+/* ===== TERMS & CONDITIONS PAGE ===== */
+body {
+  font-family: var(--font-main);
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
 
 .container {
   max-width: 900px;
@@ -1681,13 +1685,14 @@ p a:hover {
   margin-bottom: 0.5rem;
 }
 
-a {
+.data-links {
   color: #1675F1;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
-a:hover {
+.data-links:hover {
   text-decoration: underline;
+  color: #1675F1;
 }
 
 @media (max-width:640px){
