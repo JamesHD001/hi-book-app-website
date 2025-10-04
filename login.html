@@ -36,10 +36,24 @@
       </nav>
     </header>
 
+    <br>
     <main class="form-section">
       <div class="form-container">
+        <br>
         <h1 class="form-title">Welcome Back</h1>
         <p class="form-subtext">Log in to continue connecting with friends.</p>
+        
+        <div class="social-btn">
+          <div class="social-buttons">
+            <button id="googleLogin" class="social-btn social-btn-google">
+              <img src="./images/google.png" alt="Google" class="social-icon" /> Continue with Google
+            </button>
+            <button id="facebookLogin" class="social-btn social-btn-facebook">
+              <img src="./images/facebook.png" alt="Facebook" class="social-icon" /> Continue with Facebook
+            </button>
+          </div>
+        </div>
+        <p>Or log in with</p>
 
         <form id="loginForm" novalidate>
           <div class="input-group">
@@ -51,7 +65,7 @@
             <label for="password">Password</label>
             <div class="password-wrapper">
               <input id="password" type="password" placeholder="Enter your password" autocomplete="current-password" required />
-              <span class="toggle-visibility" data-target="password" role="button" tabindex="0" aria-label="Show or hide password">
+              <span class="toggle-visibility" role="button" tabindex="0" onclick="togglePassword('password', this)">
                 <i data-lucide="eye"></i>
               </span>
             </div>
@@ -59,10 +73,9 @@
 
           <button type="submit" class="login-btn">Login</button>
 
-          <p class="redirect">
-            Don't have an account? <a href="signup.html">Sign Up</a>
-          </p>
+          <p class="redirect">Don’t have an account? <a href="signup.html">Sign Up</a></p>
         </form>
+
 
         <div id="loginMessage" class="message"></div>
       </div>
