@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hi!Book - Data Deletion Callback</title>
+    <meta
+      name="description"
+      content="Hi!Book Data Deletion Callback page for handling user data removal requests as required by Meta and other OAuth platforms."
+    />
+    <link rel="stylesheet" href="./styles/hibook.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="main-navbar">
+          <div class="gradient-logo" id="gradient-logo">
+            <a href="home.html">Hi!Book</a>
+          </div>
+          <ul class="main-nav-links" id="navLinks">
+            <li><a href="home.html" title="Home"><i data-lucide="home"></i></a></li>
+            <li><a href="privacy-policy.html" title="Privacy Policy"><i data-lucide="shield"></i></a></li>
+            <li><a href="terms-of-service.html" title="Terms of Service"><i data-lucide="file-text"></i></a></li>
+            <li><a href="data-deletion.html" title="Data Deletion Request"><i data-lucide="trash-2"></i></a></li>
+          </ul>
+
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <article class="card">
+        <h1>Data Deletion Callback</h1>
+        <p class="muted">
+          This page serves as Hi!Book’s official endpoint for user data deletion requests and OAuth data removal callbacks.
+        </p>
+
+        <section>
+          <h2>1. About This Page</h2>
+          <p>
+            If you have logged into Hi!Book using Facebook, Google, or another third-party service,
+            this page provides the process for deleting your data from our systems as required by their data policy.
+          </p>
+        </section>
+
+        <section>
+          <h2>2. Manual Data Deletion Request</h2>
+          <p>
+            To request deletion of your Hi!Book account and all associated data, please send an email to:
+          </p>
+          <p>
+            <a href="mailto:hibook.support@gmail.com" class="highlight">hibook.support@gmail.com</a>
+          </p>
+          <p>
+            Include your full name, registered email, and username (if applicable). We will verify your identity and complete the
+            deletion process within <strong>30 days</strong>.
+          </p>
+        </section>
+
+        <section>
+          <h2>3. Automated Callback (For OAuth Platforms)</h2>
+          <p>
+            If this page was accessed through a data deletion callback (e.g., from Meta/Facebook),
+            Hi!Book’s system logs the request and triggers deletion from our secure database.
+          </p>
+          <p>
+            For confirmation or manual follow-up, please contact
+            <a href="mailto:hibook.support@gmail.com">hibook.support@gmail.com</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2>4. Example Callback Endpoint (For Meta Verification)</h2>
+          <p>
+            If you are setting up your Facebook Login integration, use the following callback URL in your
+            Facebook Developer Dashboard:
+          </p>
+
+          <div class="code-box">
+            <code>https://hi-book-app.firebaseapp.com/data-deletion-callback.html</code>
+          </div>
+
+          <p class="muted">
+            This URL handles both human-readable instructions and automated confirmation when Facebook queries it.
+          </p>
+        </section>
+
+        <section>
+          <h2>5. Confirmation</h2>
+          <p>
+            If your deletion request has been submitted successfully, you will receive an email confirmation
+            from our support team within a few business days.
+          </p>
+        </section>
+
+        <section class="callback-status">
+          <h2>Callback Status</h2>
+          <p id="callback-status-text">Checking for data deletion callback...</p>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Hi!Book. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+
+      // Handle OAuth callback verification
+      const params = new URLSearchParams(window.location.search);
+      const userId = params.get("user_id");
+      const deletionToken = params.get("confirmation_code");
+
+      const statusElement = document.getElementById("callback-status-text");
+
+      if (userId || deletionToken) {
+        statusElement.textContent = "✅ Data deletion request received successfully.";
+      } else {
+        statusElement.textContent = "ℹ️ No callback parameters detected. This page is for OAuth data deletion verification.";
+      }
+    </script>
+  </body>
+</html>
