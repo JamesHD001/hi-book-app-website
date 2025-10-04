@@ -65,7 +65,11 @@ body {
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
+.hero-section p{
+  color: #fdfdfde7;
+}
 .gradient-logo {
+    font-family: var(--font-logo);
     font-size: 2.5rem;
     font-weight: bold;
     background: linear-gradient(90deg, #f11616, #3afafa, #FFE066, #fcf3fa);
